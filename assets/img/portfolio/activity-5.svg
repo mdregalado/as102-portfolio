@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='900' height='620' viewBox='0 0 900 620'>
+  <defs>
+    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='#1e293b'/><stop offset='1' stop-color='#0f172a'/></linearGradient>
+    <linearGradient id='a' x1='0' y1='0' x2='1' y2='1'><stop stop-color='#6ee7b7'/><stop offset='1' stop-color='#38bdf8'/></linearGradient>
+  </defs>
+  <rect width='900' height='620' fill='url(#g)'/>
+  <circle cx='760' cy='120' r='150' fill='#38bdf8' opacity='.12'/>
+  <circle cx='150' cy='510' r='170' fill='#6ee7b7' opacity='.10'/>
+  <rect x='85' y='90' width='730' height='440' rx='38' fill='rgba(255,255,255,.06)' stroke='rgba(255,255,255,.18)'/>
+  <text x='450' y='260' text-anchor='middle' font-family='Arial, sans-serif' font-size='54' font-weight='800' fill='#ffffff'>Activity 05</text>
+  <text x='450' y='325' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='#aeb7c6'>Replace this image with your own output</text>
+  <rect x='310' y='375' width='280' height='58' rx='29' fill='url(#a)'/>
+  <text x='450' y='412' text-anchor='middle' font-family='Arial, sans-serif' font-size='20' font-weight='800' fill='#06101a'>Portfolio Item</text>
+</svg>
