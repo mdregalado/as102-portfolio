@@ -37,6 +37,62 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+
+  <!-- GitHub Pages image fallback fixer -->
+  <script>
+    (function () {
+      const basePath = "assets/img/portfolio/";
+      const fallbacks = {
+        "Slide4.jpg": ["Slide4.JPG", "slide4.jpg", "slide4.JPG", "Slide 4.jpg", "slide 4.jpg"],
+        "Slide6.jpg": ["Slide6.JPG", "slide6.jpg", "slide6.JPG", "Slide 6.jpg", "slide 6.jpg"],
+        "Slide9.jpg": ["Slide9.JPG", "slide9.jpg", "slide9.JPG", "Slide 9.jpg", "slide 9.jpg"],
+        "Slide14.jpg": ["Slide14.JPG", "slide14.jpg", "slide14.JPG", "Slide 14.jpg", "slide 14.jpg"],
+        "Slide15.jpg": ["Slide15.JPG", "slide15.jpg", "slide15.JPG", "Slide 15.jpg", "slide 15.jpg"],
+        "Slide16.jpg": ["Slide16.JPG", "slide16.jpg", "slide16.JPG", "Slide 16.jpg", "slide 16.jpg"],
+        "Slide17.jpg": ["Slide17.JPG", "slide17.jpg", "slide17.JPG", "Slide 17.jpg", "slide 17.jpg"],
+        "Slide18.jpg": ["Slide18.JPG", "slide18.jpg", "slide18.JPG", "Slide 18.jpg", "slide 18.jpg"],
+        "RL1.jpg": ["RL1.JPG", "rl1.jpg", "IOS LOGO.jpg", "IOS LOGO.JPG", "ios-logo.jpg", "ios logo.jpg"],
+        "IOS LOGO.jpg": ["IOS LOGO.JPG", "ios-logo.jpg", "ios logo.jpg", "RL1.jpg", "RL1.JPG"],
+        "Recreated- Logo.jpg": ["Recreated- Logo.JPG", "Recreated Logo.jpg", "Recreated Logo.JPG", "recreated-logo.jpg", "recreated logo.jpg"],
+        "placeholder.jpg": ["placeholder.JPG", "Placeholder.jpg", "assets/img/portfolio/placeholder.jpg"]
+      };
+
+      function fileNameFromUrl(url) {
+        try {
+          const cleanUrl = url.split('?')[0].split('#')[0];
+          return decodeURIComponent(cleanUrl.substring(cleanUrl.lastIndexOf('/') + 1));
+        } catch (e) {
+          return url.substring(url.lastIndexOf('/') + 1);
+        }
+      }
+
+      function updateLightboxHref(img, newSrc) {
+        const wrap = img.closest('.portfolio-wrap');
+        if (!wrap) return;
+        const link = wrap.querySelector('a.glightbox');
+        if (link) link.href = newSrc;
+      }
+
+      window.addEventListener('error', function (event) {
+        const target = event.target;
+        if (!target || target.tagName !== 'IMG') return;
+
+        const currentName = fileNameFromUrl(target.getAttribute('src') || '');
+        const options = fallbacks[currentName];
+        if (!options || options.length === 0) return;
+
+        const index = Number(target.dataset.fallbackIndex || 0);
+        if (index >= options.length) return;
+
+        target.dataset.fallbackIndex = index + 1;
+        const nextSrc = options[index].includes('/') ? options[index] : basePath + options[index];
+        target.src = nextSrc;
+        updateLightboxHref(target, nextSrc);
+      }, true);
+    })();
+  </script>
+
 </head>
 
 <body class="index-page">
@@ -897,9 +953,9 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-midterms">
                   <div class="portfolio-wrap">
-                    	<video controls class="img-fluid rounded shadow" poster="placeholder.jpg">
-        			<source src="assets/img/portfolio/Logo Presentation.mp4" type="Logo Presentation/mp4">
-        			<source src="assets/img/portfolio/Logo Presentation.webm" type="Logo Presentation/webm">
+                    	<video controls class="img-fluid rounded shadow" >
+        			<source src="assets/img/portfolio/Logo Presentation.mp4" type="video/mp4">
+        			<source src="assets/img/portfolio/Logo Presentation.webm" type="video/webm">
         		</video>
                     <div class="portfolio-info">
                       <div class="content">
